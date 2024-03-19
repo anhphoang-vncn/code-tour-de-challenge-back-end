@@ -1,17 +1,6 @@
-Live site: https://luyencode.net/
+### Hướng dẫn triển khai máy chủ trên Linux
 
-Phiên bản cải tiến (tùy chỉnh + thêm tiếng Việt), dựa trên mã nguồn mở [QDOJ](https://github.com/QingdaoU/OnlineJudge), nhánh clone của tác giả [Harry-zklcdc](https://github.com/Harry-zklcdc/OnlineJudge)
-
-### Kiến trúc
-
-Hệ thống Online Judge này bao gồm 3 module:
-- Judger: https://github.com/luyencode/Judger ([Python wrapper](https://github.com/luyencode/JudgeServer))
-- Web Backend: https://github.com/luyencode/OnlineJudge
-- Web Frontend: https://github.com/luyencode/OnlineJudgeFE
-
-Các module trên đều được đóng gói Docker và đã đẩy lên Docker Hub. Trong trường hợp cần thiết, bạn có thể sửa từng thành phần!
-
-### Cài đặt trên máy Linux
+`Lưu ý:` Đọc kỹ trước khi thực hiện tránh clone nhiều repo
 
 1. Cài đặt môi trường
 
@@ -30,7 +19,7 @@ Các module trên đều được đóng gói Docker và đã đẩy lên Docker
 3. Clone repo
 
     ```bash
-    git clone -b 2.0 https://github.com/luyencode/OnlineJudgeDeploy.git && cd OnlineJudgeDeploy
+    git clone -b 2.0 https://github.com/anhphoang-vncn/code-tour-de-challenge-back-end.git && cd code-tour-de-challenge-back-end
     ```
 
 4. Khởi động
@@ -39,15 +28,24 @@ Các module trên đều được đóng gói Docker và đã đẩy lên Docker
     docker-compose up -d
     ```
 
-    > Nếu bạn không dùng user `root`，hãy sử dụng `sudo -E docker-compose up -d`.
+    > Luu ý: Nếu bạn không dùng user `root`，hãy sử dụng lệnh sau:
+    
+    ```bash
+    sudo -E docker-compose up -d
+    ```
 
-Quá trình cài đặt có thể tốn từ 5 đến 30 phút phụ thuộc vào tốc độ mạng!
+    > Quá trình cài đặt có thể tốn từ 5 đến 30 phút phụ thuộc vào tốc độ mạng!
 
-Sau đó, hãy kiểm tra bằng lệnh `docker ps -a`，nếu không có container nào ở trạng thái `unhealthy` hoặc `Exited (x) xxx` thì là ok rồi đó.
+    > Sau đó, hãy kiểm tra bằng lệnh `docker ps -a`，nếu không có container nào ở trạng thái `unhealthy` hoặc `Exited (x) xxx` thì bạn đã triển khai thành công trển cổng 80 hoặc 443.
 
-## Sử dụng
+5. Sử dụng
 
+    Truy cập vào `http://localhost:7676/admin` (cổng `7676` là website [FRONT-END](https://github.com/anhphoang-vncn/code-tour-de-challenge) đang chạy) để đăng nhập vào phân hệ quản trị và bắt đầu sử dụng.
 
-Truy cập cổng HTTP 80 hoặc cổng HTTPS 443 của máy chủ thông qua trình duyệt và bạn có thể bắt đầu sử dụng. Đường dẫn trang quản lý là `/admin`, tên người dùng quản trị viên được tự động thêm vào trong quá trình cài đặt là `root` và mật khẩu là `rootroot`. **Vui lòng thay đổi mật khẩu ngay**.
+### Chú ý
 
-Tài liệu: http://opensource.qduoj.com/
+Tên người dùng quản trị viên được tự động thêm vào trong quá trình cài đặt là `root` và mật khẩu là `rootroot`. **Vui lòng thay đổi mật khẩu ngay**.
+
+### Tài liệu 
+
+http://opensource.qduoj.com/

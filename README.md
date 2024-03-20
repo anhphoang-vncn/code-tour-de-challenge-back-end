@@ -19,7 +19,7 @@
 3. Clone repo
 
     ```bash
-    git clone -b 2.0 https://github.com/anhphoang-vncn/code-tour-de-challenge-back-end.git && cd code-tour-de-challenge-back-end
+    git clone https://github.com/anhphoang-vncn/code-tour-de-challenge-back-end.git && cd code-tour-de-challenge-back-end
     ```
 
 4. Khởi động
